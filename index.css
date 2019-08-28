@@ -6,6 +6,15 @@ body {
 
 }
 
+.input {
+    border: 1px solid black;
+    max-width: 250px;
+    height: 50px;
+    margin-bottom: 4px;
+    line-height: 50px;
+    padding: 0 4px;
+    text-align: right;
+}
 
 .calculator-body{
     display: flex;
