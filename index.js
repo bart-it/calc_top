@@ -50,7 +50,7 @@ document.querySelector('.calc-calculate').addEventListener('click', function(){
     } while((inputArray.length > 1))
 
 
-
+    document.querySelector('.input').innerHTML = inputArray.pop();
 
     
 })
