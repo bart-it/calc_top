@@ -3,24 +3,48 @@
 }
 
 body {
-    color: red;
+
+}
+
+
+.calculator-body{
+    display: flex;
+}
+
+.calc-numbers, .calc-operators {
+    display: flex;
+}
+
+.calc-operators{
+    flex-direction: column;
+    align-items: center;
 }
 
 .calc-numbers{
-    display: flex;
     flex-wrap: wrap;
     width: 180px;
     justify-content: center;
 }
 
-.numbers{
+.box {
+    color: white;
     width: 50px;
     height: 50px;
-    color: white;
-    background-color: rgb(63, 163, 63);
-    margin: 2px;
-    text-align: center;
     line-height: 50px;
     font-weight: 600;
     font-size: 2em;
+    text-align: center;
+    margin: 2px;
+}
+
+.number{
+    background-color: rgb(63, 163, 63);
+}
+
+.operator{
+    background-color: rgb(146, 48, 48);
+}
+
+.calc-calculate{
+    background-color: rgb(71, 145, 194);
 }
