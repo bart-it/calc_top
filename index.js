@@ -34,14 +34,26 @@ document.querySelectorAll('.operator').forEach(operator => {
 
 document.querySelector('.calc-calculate').addEventListener('click', function(){
     let inputArray = document.querySelector('.input').innerHTML.split(' ');
+    let calculate = [];
+
+    do{
+        calculate = inputArray.splice(0, 3)
+        console.log(inputArray)
+        calculate.forEach((a, i) =>{
+            if(a === '-'){ inputArray.unshift(Number(calculate[i - 1]) - Number(calculate[i + 1]))}
+            else if(a === '+'){ inputArray.unshift(Number(calculate[i - 1]) + Number(calculate[i + 1]))}
+            else if(a === '/'){ inputArray.unshift(Number(calculate[i - 1]) / Number(calculate[i + 1]))}
+            else if(a === '*'){ inputArray.unshift(Number(calculate[i - 1]) * Number(calculate[i + 1]))}
+        })
     
-    let calculated = 0;
+        console.log(inputArray)
+    } while((inputArray.length > 1))
+
+
+
+
     
-    inputArray.forEach((item, index) => {
-        if(item === '-'){
-            console.log(inputArray[index - 1] - inputArray[index + 1])
-        }
-    })
 })
+
 
 
