@@ -32,9 +32,21 @@ document.querySelectorAll('.operator').forEach(operator => {
 
         } else {
           document.querySelector('.input').innerHTML += ' ' + this.innerHTML + ' ';
-        }    
+        }
 
     })
+})
+
+document.querySelector('.calc-period').addEventListener('click', function(){
+
+  let array = document.querySelector('.input').innerHTML.split(' ');
+  console.log(array);
+  if(array[array.length - 1].includes('.')){
+
+  } else {
+    document.querySelector('.input').innerHTML += '.';
+  }
+
 })
 
 document.querySelector('.calc-calculate').addEventListener('click', function(){
@@ -56,16 +68,29 @@ document.querySelector('.calc-calculate').addEventListener('click', function(){
           })
         } else {
         calculate = inputArray.splice(0, 3)
-        console.log(inputArray)
+
         calculate.forEach((a, i) =>{
-            if(a === '-'){ inputArray.unshift(Number(calculate[i - 1]) - Number(calculate[i + 1]))}
-            else if(a === '+'){ inputArray.unshift(Number(calculate[i - 1]) + Number(calculate[i + 1]))}
-            else if(a === '/'){ inputArray.unshift(Number(calculate[i - 1]) / Number(calculate[i + 1]))}
-            else if(a === '*'){ inputArray.unshift(Number(calculate[i - 1]) * Number(calculate[i + 1]))}
+            if(a === '-'){
+              let b = Number(calculate[i - 1]);
+              let c = Number(calculate[i + 1]);
+              inputArray.unshift(b - c)
+            }
+            else if(a === '+'){
+              let b = Number(calculate[i - 1]);
+              let c = Number(calculate[i + 1]);
+              inputArray.unshift(b + c)}
+            else if(a === '/'){
+              let b = Number(calculate[i - 1]);
+              let c = Number(calculate[i + 1]);
+              inputArray.unshift(b / c)}
+            else if(a === '*'){
+              let b = Number(calculate[i - 1]);
+              let c = Number(calculate[i + 1]);
+              inputArray.unshift(b * c)}
         })
       }
 
-        console.log(inputArray)
+
     } while((inputArray.length > 1))
 
 
