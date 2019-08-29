@@ -58,3 +58,7 @@ body {
 .calc-calculate{
     background-color: rgb(71, 145, 194);
 }
+
+.calc-period {
+  background-color: black;
+}
