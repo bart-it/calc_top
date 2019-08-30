@@ -62,3 +62,7 @@ body {
 .calc-period {
   background-color: black;
 }
+
+.calc-reset {
+  background-color: red;
+}
