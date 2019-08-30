@@ -6,25 +6,35 @@ body {
 
 }
 
+.calculator{
+  padding: 50px 20px;
+  width: 350px;
+  background-color: rgb(184, 184, 148);
+  box-shadow: 1px 1px 0px 0px black;
+}
+
 .input {
+    background-color: #fff;
     border: 1px solid black;
-    max-width: 250px;
-    height: 50px;
-    margin-bottom: 4px;
-    line-height: 50px;
+    max-width: 270px;
+    height: 60px;
+    margin-bottom:20px;
+    line-height: 60px;
+    margin-left: 14px;
     padding: 0 4px;
     text-align: right;
+    box-shadow: inset 1px 0px 0px 0px black;
 }
 
 .calculator-body{
     display: flex;
 }
 
-.calc-numbers, .calc-operators {
+.calc-numbers, .calc-operators, .calc-options {
     display: flex;
 }
 
-.calc-operators{
+.calc-operators, .calc-options{
     flex-direction: column;
     align-items: center;
 }
@@ -45,6 +55,11 @@ body {
     text-align: center;
     margin: 2px;
     cursor:pointer;
+    box-shadow: 1px 0px 0px 0px black;
+}
+
+.br50 {
+  border-radius: 50%;
 }
 
 .number{
