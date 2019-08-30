@@ -190,18 +190,22 @@ document.querySelector('.calc-calculate').addEventListener('click', function(){
 
 
 
-
-
     } while((inputArray.length > 1))
 
-
-
-
-
     document.querySelector('.input').innerHTML = inputArray.pop();
-
-
-
-
-
 })
+
+document.querySelector('.calc-reset').addEventListener('click', function(){
+  document.querySelector('.input').innerHTML = '';
+});
+
+document.querySelector('.calc-return').addEventListener('click', function(){
+  let inputArray = document.querySelector('.input').innerHTML.split('');
+  if(inputArray[inputArray.length -1] === " "){
+      inputArray.splice(inputArray.length -2 , 3);
+  }
+  let lastArr = inputArray.pop([inputArray.length -1]).split('');
+  lastArr.pop([lastArr.length - 1]);
+  inputArray.push(lastArr.join(''));
+  document.querySelector('.input').innerHTML = inputArray.join('');
+});
