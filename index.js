@@ -82,7 +82,6 @@ document.querySelector('.calc-period').addEventListener('click', function(){
 
   let array = document.querySelector('.input').innerHTML.split(' ');
 
-  console.log(array);
 
   if(array[array.length - 1].includes('.')){
 
@@ -110,8 +109,6 @@ document.querySelector('.calc-calculate').addEventListener('click', function(){
     let toFix = newArr.forEach(item => {
       fixArr.push(item.split('.')[1].length);
     })
-
-    console.log(fixArr);
 
     do{
 
@@ -158,7 +155,16 @@ document.querySelector('.calc-calculate').addEventListener('click', function(){
 
               let c = Number(calculate[i + 1]);
 
-              inputArray.unshift(b - c)
+              let fixed;
+
+              if(fixArr.length > 0){
+                      fixed = (b - c).toFixed(Math.max(...fixArr));
+                    } else {
+                      fixed = (b - c)
+                    }
+                    inputArray.unshift(fixed);
+
+
 
             }
 
@@ -168,7 +174,15 @@ document.querySelector('.calc-calculate').addEventListener('click', function(){
 
               let c = Number(calculate[i + 1]);
 
-              inputArray.unshift(b + c)}
+              let fixed;
+
+              if(fixArr.length > 0){
+                      fixed = (b + c).toFixed(Math.max(...fixArr));
+                    } else {
+                      fixed = (b + c)
+                    }
+                    inputArray.unshift(fixed);
+              }
 
         })
 
