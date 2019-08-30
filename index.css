@@ -63,6 +63,6 @@ body {
   background-color: black;
 }
 
-.calc-reset {
+.calc-reset, .calc-return {
   background-color: red;
 }
